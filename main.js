@@ -1,6 +1,8 @@
 /* 
 listen for messages in channel
-app starts listening when a specific word is called, using !start-count for this demo
+app starts listening when a specific word is called (!start-count)
+then when a users types in the chat the number '1', it increments by 1 each time 
+app stops listening when a specific word is called (!end-count)
 
 */
 
