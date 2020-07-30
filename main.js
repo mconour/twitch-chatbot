@@ -7,6 +7,10 @@ app stops listening when a specific word is called (!end-count)
 */
 
 
+const countElement = document.querySelector('#count');
+const usersElement = document.querySelector('#users');
+
+
 const client = new tmi.Client({
     connection: {
         secure: true,
@@ -36,12 +40,14 @@ client.on('message', (channel, tags, message, self) => {
     } else if (username === "spacekook123" && message === "!end-count") {
         listeningForCount = false;
         // say count out loud
-    }     
+    }    
+     
     else if (listeningForCount && message === "1") {
         users[tags.username] = true;
 
         // display current count on page
-        console.log(Object.keys(users).length);
+        countElement.textContent = Object.keys(users).length;
+        usersElement.textContent = Object.keys(users).join(', ');
     }
 
     console.log(`${tags['display-name']}: ${message}`);
