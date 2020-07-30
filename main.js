@@ -25,16 +25,21 @@ const users = {};
 client.on('message', (channel, tags, message, self) => {
     if (self) return;    
 
-    if (message === "!start-count") {
+    //extracting out specific user
+    const {username} = tags;
+
+    if (username === "spacekook123" && message === "!start-count") {
         listeningForCount = true;
         console.log(listeningForCount);
-    } else if (message === "!end-count") {
+    } else if (username === "spacekook123" && message === "!end-count") {
         listeningForCount = false;
         // say count out loud
-    } 
-    
+    }     
     else if (listeningForCount && message === "1") {
         users[tags.username] = true;
+
+        // display current count on page
+        console.log(Object.keys(users).length);
     }
 
     console.log(`${tags['display-name']}: ${message}`);
