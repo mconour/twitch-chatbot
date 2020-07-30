@@ -14,16 +14,21 @@ const client = new tmi.Client({
 });
 
 client.connect();
-let count = 0;
+
+
+let listeningForCount = false;
+
+// keeping track of users
+const users = {};
 
 
 client.on('message', (channel, tags, message, self) => {
     if (self) return true;    
 
     if (message === "!start-count") {
-
-    } else {
-
+        listeningForCount = true;
+    } else if (listeningForCount && message === "1") {
+        console.log(tags);
     }
 
     console.log(`${tags['display-name']}: ${message}`);
