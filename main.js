@@ -4,6 +4,7 @@ app starts listening when a specific word is called (!start-count)
 then when a users types in the chat the number '1', it increments by 1 each time 
 app stops listening when a specific word is called (!end-count)
 
+app resets when a specific word is called (!reset-count)
 */
 
 
@@ -29,20 +30,25 @@ const users = {};
 
 
 client.on('message', (channel, tags, message, self) => {
-    if (self) return;    
+    if (self) return;
 
     //extracting out specific user
-    const {username} = tags;
+    const {
+        username
+    } = tags;
 
-    if (username === "spacekook123" && message === "!start-count") {
-        listeningForCount = true;
-        console.log(listeningForCount);
-    } else if (username === "spacekook123" && message === "!end-count") {
-        listeningForCount = false;
-        // say count out loud
-    }    
-     
-    else if (listeningForCount && message === "1") {
+    if (username === 'spacekook123') {
+        if (message === "!start-count") {
+            listeningForCount = true;            
+        } else if (message === '!end-count') {
+            listeningForCount = false;
+
+            // say count out loud
+        } else if (message === '!clear-count') {
+            countElement.textContent = 'waiting for count...';
+           usersElement.textContent = '';          
+        }
+    } else if (listeningForCount && message === "1") {
         users[tags.username] = true;
 
         // display current count on page
