@@ -23,12 +23,18 @@ const users = {};
 
 
 client.on('message', (channel, tags, message, self) => {
-    if (self) return true;    
+    if (self) return;    
 
     if (message === "!start-count") {
         listeningForCount = true;
-    } else if (listeningForCount && message === "1") {
-        console.log(tags);
+        console.log(listeningForCount);
+    } else if (message === "!end-count") {
+        listeningForCount = false;
+        // say count out loud
+    } 
+    
+    else if (listeningForCount && message === "1") {
+        users[tags.username] = true;
     }
 
     console.log(`${tags['display-name']}: ${message}`);
