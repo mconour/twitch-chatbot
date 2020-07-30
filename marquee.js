@@ -1,4 +1,4 @@
-/* Vanilla JS */
+/* marquee functionality */
 
 var rightJS = {
     init: function(){
