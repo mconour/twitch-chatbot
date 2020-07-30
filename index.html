@@ -5,29 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch ChatCounter</title>
-    <link rel="stylesheet" href="https://ez-css.now.sh">
+    <!-- <link rel="stylesheet" href="https://ez-css.now.sh"> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <center>
-        <marquee><p>Type 1 in the chat!</p></marquee>
+
+    <div class="rightJS li"><div>★ Type 1 in the chat! ★</div></div>
+
+
+    <div class="parent">
+        <div class="child">
+            <em>(broadcaster only)</em>
+            <h1>!start-count | !end-count | !clear-count</h1>
+            
+
+            <div>
+                <h1 id="count">Waiting for count...</h1>
+                <p id="users"></p>
+            </div>
+
+
+        </div>
+      </div>
+
+    
+
+
+
+
+   <!--  <center>
+        <marquee>
+            <p>Type 1 in the chat!</p>
+        </marquee>
         <em>(broadcaster only)</em>
         <br />
         <code>!start-count | !end-count | !clear-count</code>
         <br />
         <br />
-      </center>
+    </center>
 
 
     <div>
-        <h1 id="count">waiting for count...</h1>
+        <h1 id="count">Waiting for count...</h1>
         <p id="users"></p>
-    </div>
+    </div> -->
 
 
     <script src="tmi.min.js"></script>
     <script src="main.js"></script>
+    <script src="marquee.js"></script>
 </body>
 
 </html>
