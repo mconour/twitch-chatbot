@@ -26,7 +26,7 @@ client.connect();
 let listeningForCount = false;
 
 // keeping track of users
-const users = {};
+let users = {};
 
 
 client.on('message', (channel, tags, message, self) => {
@@ -39,14 +39,19 @@ client.on('message', (channel, tags, message, self) => {
 
     if (username === 'spacekook123') {
         if (message === "!start-count") {
-            listeningForCount = true;            
+            listeningForCount = true;
         } else if (message === '!end-count') {
             listeningForCount = false;
-
             // say count out loud
+            const sayCount = new SpeechSynthesisUtterance(Object.keys(users).length)
+            window.speechSynthesis.speak(sayCount);
+
         } else if (message === '!clear-count') {
             countElement.textContent = 'waiting for count...';
-           usersElement.textContent = '';          
+            usersElement.textContent = '';
+
+            // when count is cleared, users is back to nothing
+            users = {};
         }
     } else if (listeningForCount && message === "1") {
         users[tags.username] = true;
