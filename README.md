@@ -7,4 +7,4 @@ Frameworks & Libraries: tmi.js
 ```
 
 
-![title](assets/img-chatbot.png)
+![Twitch ChatCounter Bot](assets/img-chatbot.png)
