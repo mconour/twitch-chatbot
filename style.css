@@ -37,15 +37,17 @@ html, body {
     box-shadow: 0 0.1em 0.5em;
   }
 
-  em {
-      position: relative;
-      left: 40%;
+  .child p {
+      text-align: center;
+      font-style: italic;
   }
 
-  h1#count {
-      text-align: center;
+  .child h1, h1#count {
+    font-size: 2em;
+    text-align: center;
   }
 
   p#users {
     text-align: center;
+   
 }
