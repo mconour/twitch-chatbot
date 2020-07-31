@@ -53,3 +53,56 @@ p#users {
     text-align: center;
 
 }
+
+
+
+/* responsive for text display */
+@media screen and (max-width: 675px) {
+
+    .child h1,
+    h1#count {
+        font-size: 1.5em;
+    }
+}
+
+
+@media screen and (max-width: 515px) {
+
+    .child h1,
+    h1#count {
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .child h1,
+    h1#count {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .child h1,
+    h1#count {
+        font-size: 1em;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+
+    .child h1,
+    h1#count {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 280px) {
+
+    .child h1,
+    h1#count {
+        font-size: 0.8em;
+    }
+}

@@ -1,29 +1,29 @@
 /* marquee functionality */
 
 
-let rightJS = {
+let marqueeJS = {
     init: function () {
-        rightJS.Tags = document.querySelectorAll('.rightJS');
-        for (var i = 0; i < rightJS.Tags.length; i++) {
-            rightJS.Tags[i].style.overflow = 'hidden';
+        marqueeJS.Tags = document.querySelectorAll('.marqueeJS');
+        for (var i = 0; i < marqueeJS.Tags.length; i++) {
+            marqueeJS.Tags[i].style.overflow = 'hidden';
         }
-        rightJS.Tags = document.querySelectorAll('.rightJS div');
-        for (var i = 0; i < rightJS.Tags.length; i++) {
-            rightJS.Tags[i].style.position = 'relative';
-            rightJS.Tags[i].style.right = '-' + rightJS.Tags[i].parentElement.offsetWidth + 'px';
+        marqueeJS.Tags = document.querySelectorAll('.marqueeJS div');
+        for (var i = 0; i < marqueeJS.Tags.length; i++) {
+            marqueeJS.Tags[i].style.position = 'relative';
+            marqueeJS.Tags[i].style.right = '-' + marqueeJS.Tags[i].parentElement.offsetWidth + 'px';
         }
-        rightJS.loop();
+        marqueeJS.loop();
     },
     loop: function () {
-        for (var i = 0; i < rightJS.Tags.length; i++) {
-            var x = parseFloat(rightJS.Tags[i].style.right);
+        for (var i = 0; i < marqueeJS.Tags.length; i++) {
+            var x = parseFloat(marqueeJS.Tags[i].style.right);
             x++;
-            var W = rightJS.Tags[i].parentElement.offsetWidth;
-            var w = rightJS.Tags[i].offsetWidth;
+            var W = marqueeJS.Tags[i].parentElement.offsetWidth;
+            var w = marqueeJS.Tags[i].offsetWidth;
             if ((x / 100) * W > w) x = -W;
-            if (rightJS.Tags[i].parentElement.parentElement.querySelector(':hover') !== rightJS.Tags[i].parentElement) rightJS.Tags[i].style.right = x + 'px';
+            if (marqueeJS.Tags[i].parentElement.parentElement.querySelector(':hover') !== marqueeJS.Tags[i].parentElement) marqueeJS.Tags[i].style.right = x + 'px';
         }
         requestAnimationFrame(this.loop.bind(this));
     }
 };
-window.addEventListener('load', rightJS.init);
+window.addEventListener('load', marqueeJS.init);
