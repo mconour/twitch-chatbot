@@ -10,17 +10,22 @@ app resets when a specific word is called (!reset-count)
 
 const countElement = document.querySelector('#count');
 const usersElement = document.querySelector('#users');
+const statusElement = document.querySelector('#status');
 
 
+const params = new URLSearchParams(window.location.search);
+const channel = params.get('channel') || 'spacekook123';
 const client = new tmi.Client({
     connection: {
         secure: true,
         reconnect: true
     },
-    channels: ['spacekook123']
+    channels: [channel]
 });
 
-client.connect();
+client.connect().then(() => {
+    statusElement.textContent = `Listening for messages in ${channel}...`;
+})
 
 
 let listeningForCount = false;
