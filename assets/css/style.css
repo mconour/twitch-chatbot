@@ -4,13 +4,12 @@ body {
     font-family: 'Futura', san-serif;
 }
 
-body {
-    background-image: url('../images/bg-desktop.png');
+body {    
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;
-    background-color: #000;
+    background-color: rgb(24, 2, 12);
     color: #DEC56C;
 }
 
