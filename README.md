@@ -1,7 +1,5 @@
 # Twitch ChatCounter Bot
 
-![Twitch ChatCounter Bot](assets/images/img-chatbot.png)
-
 Twitch ChatCounter Bot is a simple bot that listens to a Twitch chat and counts the number of times a specific word is mentioned. This bot can be used in a Twitch channel to keep track of user interactions and provide a real-time count of occurrences.
 
 ## Features
