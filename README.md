@@ -39,10 +39,6 @@ To run the bot locally, follow these steps:
 3. Configure the Twitch channel by setting the channel name in the URL query parameter.
 4. Run the bot using `node bot.js`.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 This bot was created for educational purposes and inspired by the Twitch community.
